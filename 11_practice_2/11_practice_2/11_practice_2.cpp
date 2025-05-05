@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+int ReadPositiveNumber(string Message)
+{
+	int Number = 0;
+
+	do
+	{
+		cout << Message << endl;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+	return Number;
+}
+
+int ReverseNumber(int Number)
+{
+	int Remainder = 0; int Number2 = 0;
+
+	while (Number > 0)
+	{
+		Remainder = Number % 10;
+		Number = Number / 10;
+		Number2 = Number2 * 10 + Remainder;
+	}
+	return Number2;
+}
+
+bool IsPalindrom(int Number)
+{
+	return Number == ReverseNumber(Number);
+
+}
+
+int main()
+{
+	if (IsPalindrom(ReadPositiveNumber("Enter A Palindrom Number: ")))
+	{
+		cout << "The number is palindrom" << endl;
+	}
+	else
+	{
+		cout << "The number is not palindrom" << endl;
+	}
+	
+}
+
