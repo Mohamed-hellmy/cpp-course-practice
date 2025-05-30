@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\moham\\source\\repos\\cpp-course-practice\\11_practice_palindrome_number\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5914696E-6569-49E4-A653-381A309A676A}|11_practice_palindrome_number\\11_practice_palindrome_number.vcxproj|C:\\Users\\moham\\source\\repos\\cpp-course-practice\\11_practice_palindrome_number\\11_practice_palindrome_number\\11_practice_palindrome_number.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5914696E-6569-49E4-A653-381A309A676A}|11_practice_palindrome_number\\11_practice_palindrome_number.vcxproj|solutionrelative:11_practice_palindrome_number\\11_practice_palindrome_number.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "11_practice_palindrome_number.cpp",
+              "DocumentMoniker": "C:\\Users\\moham\\source\\repos\\cpp-course-practice\\11_practice_palindrome_number\\11_practice_palindrome_number\\11_practice_palindrome_number.cpp",
+              "RelativeDocumentMoniker": "11_practice_palindrome_number\\11_practice_palindrome_number.cpp",
+              "ToolTip": "C:\\Users\\moham\\source\\repos\\cpp-course-practice\\11_practice_palindrome_number\\11_practice_palindrome_number\\11_practice_palindrome_number.cpp",
+              "RelativeToolTip": "11_practice_palindrome_number\\11_practice_palindrome_number.cpp",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAwD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-27T18:42:11.186Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+int RandomNumber(int From, int To)
+{
+    int RandomNumber = rand() % (To - From + 1) + From;
+
+	return RandomNumber;
+}
+
+void FillArray(int arr[100], int& arrlenght)
+{
+    cout << "Enter the length of the array: ";
+	cin >> arrlenght;
+
+    for (int i = 0; i < arrlenght; i++)
+    {
+        arr[i] = RandomNumber(0, 100);
+    }
+
+}
+
+void PrintArray(int arr[100], int arrlenght)
+{
+    for (int i = 0; i < arrlenght; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int MaxNumber(int arr[100], int arrLenght)
+{
+    int Max = 0;
+
+    for (int i = 0; i < arrLenght; i++)
+    {
+        if (arr[i] > Max)
+        {
+			Max = arr[i];
+        }
+    }
+
+    return  Max;
+}
+
+
+int main()
+{
+    srand((unsigned)time(NULL));
+
+    int arr[100], arrlenght;
+
+    FillArray(arr, arrlenght);
+    cout << endl;
+
+	cout << "The array is: ";
+    PrintArray(arr, arrlenght) ;
+	cout << endl;
+
+	cout << "The maximum element in the array is: ";
+	cout << MaxNumber(arr, arrlenght) << endl;
+    return 0;
+}
