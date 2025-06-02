@@ -1,9 +1,9 @@
-#include <iostream>   // Include iostream for input/output operations.
-using namespace std;  // Use the standard namespace to avoid prefixing std:: to standard functions.
+#include <iostream>   // Include the iostream library for input/output operations.
+using namespace std;  // Use the standard namespace to simplify access to standard functions.
 
 // Function: ReadPositiveNumber
 // Purpose: Prompts the user with a custom message to enter a positive number.
-//          Repeats the prompt until the user inputs a number greater than zero.
+//          Continues to prompt until the user enters a number greater than zero.
 // Parameter: Message - a string containing the prompt message.
 // Returns: A positive integer entered by the user.
 int ReadPositiveNumber(string Message)
@@ -12,68 +12,51 @@ int ReadPositiveNumber(string Message)
     do
     {
         cout << Message << endl;  // Display the prompt message.
-        cin >> Number;            // Read the number from the user.
-    } while (Number <= 0);        // Continue prompting if the number is not positive.
+        cin >> Number;            // Read the user's input.
+    } while (Number <= 0);        // Repeat if the number is not positive.
 
-    return Number;  // Return the validated positive number.
+    return Number;  // Return the valid positive number.
 }
 
 // Function: CountDigitFrequency
-// Purpose: Counts how many times a specific digit appears in the given number.
-//          The function extracts each digit from the number and increments the count when a match is found.
+// Purpose: Counts how many times a specific digit appears in a given number.
+//          It does so by extracting each digit of the number and comparing it to the digit to check.
 // Parameters:
-//    DigitToCheck - the digit (as a short) to look for.
-//    Number - the main number in which the frequency of the digit is to be counted.
-// Returns: The frequency (count) of the specified digit in the number.
+//   - DigitToCheck: The digit (as a short) to look for within the number.
+//   - Number: The main number in which to count the frequency of DigitToCheck.
+// Returns: An integer representing the number of times DigitToCheck appears in Number.
 int CountDigitFrequency(short DigitToCheck, int Number)
 {
-    int Freq = 0;       // Initialize frequency counter to zero.
-    int Remainder = 0;  // Variable to store the digit extracted from the number.
+    int FreqCount = 0;   // Initialize the frequency counter to zero.
+    int Remainder = 0;   // Variable to store the digit extracted from the number.
 
-    // Process each digit until the number becomes 0.
+    // Process each digit of Number until there are no digits left.
     while (Number > 0)
     {
-        Remainder = Number % 10;  // Extract the last digit from the number.
-        Number = Number / 10;     // Remove the last digit from the number.
+        Remainder = Number % 10;  // Extract the last digit of Number.
+        Number = Number / 10;     // Remove the last digit from Number.
 
-        // If the extracted digit matches the digit we're checking, increment the frequency counter.
+        // If the extracted digit matches the digit to check, increment the counter.
         if (DigitToCheck == Remainder)
         {
-            Freq++;
+            FreqCount++;
         }
     }
-    return Freq;  // Return the total count of the specified digit.
+    return FreqCount;  // Return the total count of matching digits.
 }
 
-// Function: PrintAllDigitsFrequencey
-// Purpose: Prints the frequency of each digit (0-9) present in the given number.
-// Parameter: Number - the number for which digit frequencies are to be printed.
-void PrintAllDigitsFrequencey(int Number)
-{
-    cout << endl;  // Print an empty line for formatting.
-
-    // Loop through all digits from 0 to 9.
-    for (int i = 0; i < 10; i++)
-    {
-        short DigitFrequency = 0;                         // Variable to hold frequency for the current digit.
-        DigitFrequency = CountDigitFrequency(i, Number);    // Get the frequency of digit 'i' in the number.
-
-        // Only print the result if the digit appears at least once.
-        if (DigitFrequency > 0)
-        {
-            cout << "Digit " << i << " Frequencey is "  // Print the digit and its frequency.
-                << DigitFrequency << " Time(s).\n";
-        }
-    }
-}
-
-// Main function: Program entry point.
+// Main function: Entry point of the program.
 int main()
 {
-    // Prompt the user to enter a number.
-    int Number = ReadPositiveNumber("Please enter the a number?");
-    // Print the frequency of each digit (0-9) in the entered number.
-    PrintAllDigitsFrequencey(Number);
+    // Prompt the user to enter the main number in which to count digit frequency.
+    int Number = ReadPositiveNumber("Please enter the main number?");
+    // Prompt the user to enter a digit whose frequency is to be checked.
+    // Although the function returns an int, it is stored in a short variable as we expect a single digit.
+    short DigitToCheck = ReadPositiveNumber("Please enter one digit to check?");
 
-    return 0;  // Return 0 to indicate successful execution.
+    // Display the result: the frequency of the specified digit within the main number.
+    cout << "\nDigit " << DigitToCheck << " Frequency is "
+        << CountDigitFrequency(DigitToCheck, Number) << " Time(s).\n";
+
+    return 0;  // Return 0 to indicate successful program execution.
 }

@@ -1,0 +1,22 @@
+# Ignore compiled files
+*.exe
+*.o
+*.obj
+*.out
+*.dll
+*.lib
+
+# Ignore build folders
+Debug/
+Release/
+
+# Ignore Visual Studio files
+.vs/
+*.sln.docstates
+*.user
+*.suo
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.bak
